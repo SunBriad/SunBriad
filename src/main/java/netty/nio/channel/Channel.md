@@ -28,4 +28,12 @@
     2) 将文件中某个区域直接映射到内存中，对于较大的文件，这通常比调用read()和 write () 方法更加高效。
     3) 强制对底层存储设备进行文件更新，确保在系统崩溃的时候不丢失数据。
     4）以一种可被很多操作系统优化为直接向文件系统缓存发送或者从中读取的高速传输方法，将字节从文件传输到某一个其他通道。
-    5）可以锁定某个文件区域，以阻止其他程序对其进行访问。  
+    5）可以锁定某个文件区域，以阻止其他程序对其进行访问。
+    
+ 此类没有定义打开现有文件或者创建新的文件的方法，只能从FileInputStream 、 FileOutputStream 、 RandomAccessFile 对象中获取文件管道， 这个会返回一个连接到相同底层文件
+ 的文件通道。 通过FileInputStream 实例getChannel(); 获取FileChannel  通道进行读取操作。 只能从FileOutputStream 实例getChannel(); 只能获取FileChannel 通道的写入操作。
+ RandomAccessFile 可以设置 "r" 、 "w" 、"rw" 三种模式实例， 来获取不同的操作.
+ 
+     
+ 
+ 
