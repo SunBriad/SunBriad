@@ -8,12 +8,12 @@ NIO Buffer 详解
 - mark 标记属性主要是记录 position  \ limit \ capactity 。可以将当前的 position 临时标记在mark 中，需要时再重新拿出来
    
 - position 表示当前的位置, position 属性与缓冲区的读写模式有关，在不同的模式下position 位置不一致，当缓冲区进行读写的模式改变，position 会进行改变。  
-&emsp;&emsp;在写入的模式下： 
+&emsp;&emsp;在写入的模式下：  
 &emsp;&emsp;&emsp;&emsp;（1） 刚刚进入到写模式时，position 为 0 ， 表示当前的写入从 0 开始。  
 &emsp;&emsp;&emsp;&emsp;（2） 每当一个数据写到缓冲区后，position 会向后移动到下一个可写的位置。  
 &emsp;&emsp;&emsp;&emsp;（3） 初始的position 值为 0 ，最大的position 为里 limit - 1。当 position 等于 limit 时 ,缓冲区就无空间可写。  
 &emsp;&emsp;在读取的模式下：  
-&emsp;&emsp;&emsp;&emsp;（1） 当缓冲区刚进入读取模式时，position 也会被置 0 。  
+&emsp;&emsp;（1） 当缓冲区刚进入读取模式时，position 也会被置 0 。  
         （2） 当从缓冲区读取时，也是从position 位置开始读。读取数据后position 向前移动到下一个可读的位置。  
         （3） position 的最大上限也是 limit ，position 达到 limit 时表示无数据可读。  
      调用 flip() 方法 对读取模式和写入模式进行翻转。<br>
