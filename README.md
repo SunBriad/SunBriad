@@ -7,6 +7,8 @@
     |    |    |
     |    |    | - netty // netty 学习
     |    |    |     |- io //  oio
+    |    |    |     |   |-tomcat 小型的自己开放端口实现servlet进行http 请求。 
+    |    |    |     |   |
     |    |    |     |- nio // NIO
     |    |    |     |   |- buffer  缓冲区
     |    |    |     |   |- channel  管道
