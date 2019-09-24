@@ -18,7 +18,8 @@ public class NIOServerDemo {
 
     // 轮寻器 Selector
      private Selector selector;
-    // Buffer 等待区
+
+    // Buffer 等待区  创建一个可以写入的buffer
     private ByteBuffer buffer = ByteBuffer.allocate(1024);
 
     // 初始化完成
@@ -30,9 +31,10 @@ public class NIOServerDemo {
            // 获取具体地址
             socketChannel.bind(new InetSocketAddress(port));
             // BIO升级版本　所以需要设置　AIO 为非阻塞模式
-             socketChannel.configureBlocking(true);
+             socketChannel.configureBlocking(false);
              //准备选择器
              selector= Selector.open();
+
              // 进行轮训 接受数据
             socketChannel.register(selector, SelectionKey.OP_ACCEPT);// 轮训打开
         } catch (IOException e) {
@@ -41,11 +43,11 @@ public class NIOServerDemo {
     }
 
     public void listen(){
-        System.out.println("listen on"+ this.port + ".");
+        System.out.println("listen on:"+ this.port + ".");
         // 轮训 主线程
             try {
                 while (true){
-
+                        // 打开轮训器,
                     selector.select();
 
                   Set<SelectionKey> keys= selector.selectedKeys();// 获取轮训集合
@@ -85,12 +87,12 @@ public class NIOServerDemo {
                 String content =new String( buffer.array(),0,len);
             key = channel.register(selector,SelectionKey.OP_WRITE);
             key.attach(channel);
-                System.out.println("读取内容"+content);
+                System.out.println("读取内容:"+content);
             }
         }//如果是可写入状态
         else  if(key.isWritable()){
             SocketChannel channel = (SocketChannel) key.channel();
-            String content = (String) key.attachment();
+            String content = (String) key.attachment().toString();
             channel.write(ByteBuffer.wrap(("输出："+content).getBytes()));
             channel.close();
         }

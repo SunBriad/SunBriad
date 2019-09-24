@@ -34,6 +34,7 @@
  的文件通道。 通过FileInputStream 实例getChannel(); 获取FileChannel  通道进行读取操作。 只能从FileOutputStream 实例getChannel(); 只能获取FileChannel 通道的写入操作。
  RandomAccessFile 可以设置 "r" 、 "w" 、"rw" 三种模式实例， 来获取不同的操作.
  
+ 
      
  
  

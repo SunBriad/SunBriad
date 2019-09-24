@@ -1,4 +1,4 @@
-package netty.nio.channel;
+package netty.nio.channel.fileChannel;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -12,7 +12,7 @@ public class FileChannelTest {
  private   static  FileOutputStream fos =null;
 
     public static void writeTest() throws IOException {
-        fos =new FileOutputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\abc.txt"));
+        fos =new FileOutputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\read.txt"));
         //通过文件输出流 获得管道
         FileChannel fchannel = fos.getChannel();
         ByteBuffer byteBuffer = ByteBuffer.wrap("abcd".getBytes());
@@ -38,7 +38,7 @@ public class FileChannelTest {
     public static void writeTest(int count) throws IOException {
         FileChannel fileChannel= null;
         try {
-            fos =new FileOutputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\abc.txt"));
+            fos =new FileOutputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\read.txt"));
             fileChannel = fos.getChannel();
             fileChannel.write(ByteBuffer.wrap("1234567".getBytes()));
             fileChannel.position(3);
@@ -72,7 +72,7 @@ public class FileChannelTest {
     public static void writeTest1() throws IOException {
         FileChannel fileChannel= null;
         try {
-            fos =new FileOutputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\abc.txt"));
+            fos =new FileOutputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\read.txt"));
             fileChannel = fos.getChannel();
             for (int i = 0; i < 10; i++){
                 final FileChannel finalFileChannel = fileChannel;
@@ -117,7 +117,7 @@ public class FileChannelTest {
      */
     public static void readTest() throws IOException {
        //  第二种方式获取FileChannel
-        RandomAccessFile raf = new RandomAccessFile("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\abc.txt","r");
+        RandomAccessFile raf = new RandomAccessFile("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\read.txt","r");
           FileChannel fileChannel=raf.getChannel();
         // 获取ByteBuffer
              ByteBuffer buffer=ByteBuffer.allocate(100);
@@ -141,7 +141,7 @@ public class FileChannelTest {
     }
 
     public static  void readThreadTest() throws IOException, InterruptedException {
-        final FileInputStream fis = new FileInputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\abc.txt"));
+        final FileInputStream fis = new FileInputStream(new File("C:\\Users\\Administrator\\IdeaProjects\\SunBird\\src\\main\\resources\\read.txt"));
         final FileChannel fisChannel = fis.getChannel();
         for (int i =0; i < 1; i++){
             Thread thread = new Thread(){

@@ -14,7 +14,7 @@ public class ServerTest {
 
     @Test
     public void Client() throws IOException {
-        SocketClientDemo socketClientDemo = new SocketClientDemo(1111,"localhost");
+        SocketClientDemo socketClientDemo = new SocketClientDemo(8085,"localhost");
     }
 
 

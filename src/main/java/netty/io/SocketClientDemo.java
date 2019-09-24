@@ -15,10 +15,6 @@ public class SocketClientDemo {
         Socket socket =new Socket(ip,port);
             // 获取输入流
        os= socket.getOutputStream();
-        System.out.println("等待输入：");
-          // 给 服务端写数据
-       os.write(12345);
-
        // 把输出流变为打印流
         PrintStream print  =new PrintStream(os);
         print.println("123456");
