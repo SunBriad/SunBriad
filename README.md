@@ -1,3 +1,28 @@
+<div align="center">
+
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="/docs/exo-logo-black-bg.jpg">
+  <img alt="exo logo" src="/docs/exo-logo-transparent.png" width="50%" height="50%">
+</picture>
+
+
+exo: Run your own AI cluster at home with everyday devices. Maintained by [exo labs](https://x.com/exolabs).
+
+
+<h3>
+
+
+[Discord](https://discord.gg/EUnjGpsmWw) | [Telegram](https://t.me/+Kh-KqHTzFYg3MGNk) | [X](https://x.com/exolabs)
+
+</h3>
+
+[![GitHub Repo stars](https://img.shields.io/github/stars/exo-explore/exo)](https://github.com/exo-explore/exo/stargazers)
+[![Tests](https://dl.circleci.com/status-badge/img/circleci/TrkofJDoGzdQAeL6yVHKsg/4i5hJuafuwZYZQxbRAWS71/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/TrkofJDoGzdQAeL6yVHKsg/4i5hJuafuwZYZQxbRAWS71/tree/main)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+</div>
+
 ## Welcome to  Netty Study
     |
     |
